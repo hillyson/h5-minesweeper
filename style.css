@@ -88,11 +88,14 @@ body {
 .cell.revealed {
     background-color: #fff;
 }
-
 .cell.mine {
-    background-color: #ff0000;
+    background-color: #666666;
+    transition: background-color 0.3s ease;
 }
-
+.cell.mine::after {
+    content: "💣";
+    font-size: 20px;
+}
 .cell.flagged::after {
     content: "🚩";
     color: red;
