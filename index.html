@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>扫雷游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="game-info">
+            <div class="mines-count">剩余雷数: <span id="mines-count">10</span></div>
+            <select id="difficulty">
+                <option value="easy">简单</option>
+                <option value="medium">中等</option>
+                <option value="hard">困难</option>
+            </select>
+            <button id="new-game">新游戏</button>
+            <label class="auto-flag">
+                <input type="checkbox" id="auto-flag"> 自动标雷
+            </label>
+            <div class="timer">时间: <span id="timer">0</span></div>
+        </div>
+        <div id="board"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

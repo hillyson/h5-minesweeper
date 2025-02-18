@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+    min-width: 270px;
+}
+
+.game-info > * {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.mines-count, .timer {
+    min-width: 100px;
+}
+
+#difficulty {
+    padding: 4px;
+    border-radius: 4px;
+}
+
+#new-game {
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.auto-flag {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: var(--cols, repeat(9, 30px));
+    grid-template-rows: var(--rows, repeat(9, 30px));
+    gap: 1px;
+    background-color: #ccc;
+    border: 1px solid #999;
+    width: fit-content;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+
+.cell:hover {
+    background-color: #ddd;
+}
+
+.cell.revealed {
+    background-color: #fff;
+}
+
+.cell.mine {
+    background-color: #ff0000;
+}
+
+.cell.flagged::after {
+    content: "🚩";
+    color: red;
+    font-size: 20px;
+}
